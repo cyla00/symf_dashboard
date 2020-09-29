@@ -1,0 +1,14 @@
+{% for flashError in app.flashes('verify_email_error') %}
+    <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+{% endfor %}
+
+<h3 class="text-center text-primary">SIGN-UP</h3>
+
+{{ form_start(registrationForm, { attr: {'action': "register"} }) }}
+    {{ form_row(registrationForm.username, { attr: {'class': "form-control my-2", placeholder: "Username"} }) }}
+    {{ form_row(registrationForm.email, { attr: {'class': "form-control my-2", placeholder: "Email"} }) }}
+    {{ form_row(registrationForm.password.first, { attr: {'class': "form-control my-2", placeholder: "Password"} }) }}
+    {{ form_row(registrationForm.password.second, { attr: {'class': "form-control my-2", placeholder: "Confirm password"} }) }}
+
+    <button type="submit" class="btn btn-lg btn-primary form-control">Register</button>
+{{ form_end(registrationForm) }}

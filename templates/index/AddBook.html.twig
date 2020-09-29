@@ -1,0 +1,20 @@
+{% for flashError in app.flashes('verify_email_error') %}
+    <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+{% endfor %}
+
+<h3 class="text-center text-primary">Add Book</h3>
+
+{{ form_start(addbookForm, { attr: {'action': "AddBook"} }) }}
+    {{ form_row(addbookForm.name, { attr: {'class': "form-control my-2", placeholder: "name"} }) }}
+    {{ form_row(addbookForm.reference, { attr: {'class': "form-control my-2", placeholder: "reference"} }) }}
+
+
+    {# //added after #}
+    {{ form_row(addbookForm.writtingDate, { attr: {'class': "form-control my-2", placeholder: "writing date"} }) }}
+    {{ form_row(addbookForm.editionDAte, { attr: {'class': "form-control my-2", placeholder: "edition date"} }) }}
+    {{ form_row(addbookForm.title, { attr: {'class': "form-control my-2", placeholder: "title"} }) }}
+
+
+
+    <button type="submit" class="btn btn-lg btn-primary form-control">AddBook</button>
+{{ form_end(addbookForm) }}
