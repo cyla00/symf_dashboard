@@ -1,20 +1,27 @@
-{% for flashError in app.flashes('verify_email_error') %}
-    <div class="alert alert-danger" role="alert">{{ flashError }}</div>
-{% endfor %}
+{% extends 'base.html.twig' %}
 
-<h3 class="text-center text-primary">Add Book</h3>
-
-{{ form_start(addbookForm, { attr: {'action': "AddBook"} }) }}
-    {{ form_row(addbookForm.name, { attr: {'class': "form-control my-2", placeholder: "name"} }) }}
-    {{ form_row(addbookForm.reference, { attr: {'class': "form-control my-2", placeholder: "reference"} }) }}
+{% block body %}
+  <h2 class="text-center">Add Book</h2>
 
 
-    {# //added after #}
-    {{ form_row(addbookForm.writtingDate, { attr: {'class': "form-control my-2", placeholder: "writing date"} }) }}
-    {{ form_row(addbookForm.editionDAte, { attr: {'class': "form-control my-2", placeholder: "edition date"} }) }}
-    {{ form_row(addbookForm.title, { attr: {'class': "form-control my-2", placeholder: "title"} }) }}
+{% block forms %}
+
+<div id='forms' class='d-flex flex-column align-items-center'>
+  {{ form_start(addbookForm, { attr: {'action': "AddBook"} }) }}
+      {{ form_row(addbookForm.name, { attr: {'class': "form-control my-2", placeholder: "name"} }) }}
+      {{ form_row(addbookForm.reference, { attr: {'class': "form-control my-2", placeholder: "reference"} }) }}
 
 
+      {# //added after #}
+      {{ form_row(addbookForm.writtingDate, { attr: {'class': "form-control my-2"} }) }}
+      {{ form_row(addbookForm.editionDAte, { attr: {'class': "form-control my-2"} }) }}
+      {{ form_row(addbookForm.title, { attr: {'class': "form-control my-2", placeholder: "title"} }) }}
+</div>
 
-    <button type="submit" class="btn btn-lg btn-primary form-control">AddBook</button>
-{{ form_end(addbookForm) }}
+{% endblock %}
+
+  {# //Centrer le bouton #}
+      <button id="buttonadd"  type="submit" class="d-flex align-items-center">AddBook</button>
+  {{ form_end(addbookForm) }}
+
+{% endblock %}

@@ -1,0 +1,46 @@
+body{
+  background: linear-gradient(44deg, #b94836, #d5962d, #8849d2);
+    background-size: 600% 600%;
+
+    -webkit-animation: AnimationName 27s ease infinite;
+    -moz-animation: AnimationName 27s ease infinite;
+    -o-animation: AnimationName 27s ease infinite;
+    animation: AnimationName 27s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 91%}
+    50%{background-position:100% 10%}
+    100%{background-position:0% 91%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 91%}
+    50%{background-position:100% 10%}
+    100%{background-position:0% 91%}
+}
+@-o-keyframes AnimationName {
+    0%{background-position:0% 91%}
+    50%{background-position:100% 10%}
+    100%{background-position:0% 91%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 91%}
+    50%{background-position:100% 10%}
+    100%{background-position:0% 91%}
+}
+
+h1{
+  color: white;
+}
+
+h3{
+  margin-bottom: 50px;
+  animation-name: titleappear;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+@keyframes titleappear{
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}

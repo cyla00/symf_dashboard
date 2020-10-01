@@ -15,8 +15,9 @@ use Symfony\Component\Validator\Constraints\NotBlank;
 
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+
 
 class AddBookFormType extends AbstractType
 {
@@ -28,8 +29,8 @@ class AddBookFormType extends AbstractType
 
             // to erase don't forget to put back the coma. Added DateType::class, replace it with null, if an error occurred. And put the labels back to false. And replace DateType::class by null.
 
-            ->add('writtingDate', DateTimeType::class)
-            ->add('editionDAte', DateTimeType::class)
+            ->add('writtingDate', DateType::class)
+            ->add('editionDAte', DateType::class)
             ->add('title', null, ['label' => false]);
 
             // ->add('writtingDate', null, ['label' => false])

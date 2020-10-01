@@ -1,0 +1,45 @@
+body{
+  background: linear-gradient(233deg, #d48f2e, #d4542e, #4173b9);
+    background-size: 600% 600%;
+
+    -webkit-animation: backanim 27s ease infinite;
+    -moz-animation: backanim 27s ease infinite;
+    -o-animation: backanim 27s ease infinite;
+    animation: backanim 27s ease infinite;
+}
+
+@-webkit-keyframes backanim {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-moz-keyframes backanim {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-o-keyframes backanim {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@keyframes backanim {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+
+h2{
+  margin-top: 55px;
+  margin-bottom: 60px;
+  text-decoration: underline;
+  color: white;
+  animation-name: titleappear;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+@keyframes titleappear{
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}

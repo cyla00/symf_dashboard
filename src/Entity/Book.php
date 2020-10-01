@@ -88,24 +88,24 @@ class Book
         return $this;
     }
 
-    public function getWrittingDate(): ?\DateTimeInterface
+    public function getWrittingDate(): ?\DateInterface
     {
         return $this->writtingDate;
     }
 
-    public function setWrittingDate(?\DateTimeInterface $writtingDate): self
+    public function setWrittingDate(?\DateInterface $writtingDate): self
     {
         $this->writtingDate = $writtingDate;
 
         return $this;
     }
 
-    public function getEditionDAte(): ?\DateTimeInterface
+    public function getEditionDAte(): ?\DateInterface
     {
         return $this->editionDAte;
     }
 
-    public function setEditionDAte(?\DateTimeInterface $editionDAte): self
+    public function setEditionDAte(?\DateInterface $editionDAte): self
     {
         $this->editionDAte = $editionDAte;
 

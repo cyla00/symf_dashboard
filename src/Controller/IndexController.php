@@ -23,7 +23,7 @@ class IndexController extends AbstractController
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
 
-        $parameters = ['registrationForm' => $form->createView()];
+        $parameters = ['registrationForm' => $form->createView(), 'css' =>"css/Home.css", 'js' =>"script/Home.js"];
 
         if (isset($_GET) === TRUE)
         {

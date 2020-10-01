@@ -11,7 +11,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 class AddBookController extends AbstractController
@@ -29,13 +28,14 @@ class AddBookController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $user->addBook($book);
             $book->setName($form->get('name')->getData())
-            ->setReference($form->get('reference')->getData())
+            ->setReference($form->get('reference')->getData());
 
             //to erase don't forget put back the coma
-
-            ->setWrittingDate($form->get('writtingDate'))
-            ->setEditionDAte($form->get('editionDAte'))
-            ->setTitle($form->get('title'));
+            $wd = $form->getData()->getWrittingDate();
+            $book->setWrittingDate(new \DateTime('now'));
+            // ->setEditionDAte($form->getData()->getEditingDAte())
+            $book->setEditionDAte(new \DateTime('now + 1 month'));
+            $book->setTitle($form->get('title'));
 
 
             $entityManager = $this->getDoctrine()->getManager();
@@ -48,7 +48,7 @@ class AddBookController extends AbstractController
         }
 
         return $this->render('index/AddBook.html.twig', [
-            'addbookForm' => $form->createView(),
+            'addbookForm' => $form->createView(), 'css' => 'css/AddBook.css', 'js' => 'script/AddBook.js'
         ]);
     }
 }
