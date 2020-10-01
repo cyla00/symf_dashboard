@@ -8,13 +8,30 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<h1>
+<h1 id='titre' class=''>
   Your Books
 </h1>
 
 {# here we put the table's contentin the form of a list #}
 <div id="booklist">
-
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col"> Name </th>
+        <th scope="col"> Reference </th>
+        <th scope="col"> Title </th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for book in books %}
+      <td> {{ book.id }} </td>
+      <td> {{ book.name }} </td>
+      <td> {{ book.title }} </td>
+      <td> {{ book.reference }} </td>
+    {% endfor %}
+    </tbody>
+  </table>
 </div>
 
 {# <form class="" action="/AddBook" method="post">

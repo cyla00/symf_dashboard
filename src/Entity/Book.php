@@ -28,7 +28,7 @@ class Book
     private $reference;
 
     /**
-     * @ORM\ManyToOne(targetEntity=user::class, inversedBy="books")
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="books")
      */
     private $owner;
 
@@ -76,12 +76,12 @@ class Book
         return $this;
     }
 
-    public function getOwner(): ?user
+    public function getOwner(): ?User
     {
         return $this->owner;
     }
 
-    public function setOwner(?user $owner): self
+    public function setOwner(?User $owner): self
     {
         $this->owner = $owner;
 
